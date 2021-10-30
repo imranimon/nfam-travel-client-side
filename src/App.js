@@ -8,6 +8,10 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
+import SingleService from './components/SingleService/SingleService';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyOrders from './components/ManageOrders/MyOrders/MyOrders';
+import AllOrders from './components/ManageOrders/AllOrders/AllOrders';
 
 function App() {
   return (
@@ -28,6 +32,15 @@ function App() {
             <Route path='/signup'>
               <SignUp></SignUp>
             </Route>
+            <PrivateRoute path='/services/:_id'>
+              <SingleService></SingleService>
+            </PrivateRoute>
+            <PrivateRoute path='/my-orders'>
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path='/all-orders'>
+              <AllOrders></AllOrders>
+            </PrivateRoute>
             <Route path='/about'>
               <About></About>
             </Route>

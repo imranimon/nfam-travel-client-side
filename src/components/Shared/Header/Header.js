@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './Header.css'
 import { HashLink } from 'react-router-hash-link';
 import logo from '../../../images/header-logo.png'
@@ -32,8 +32,12 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className='ms-5'>
+                        {user.email &&
+                            <NavDropdown id='text-white' title='Manage Order'>
+                                <NavDropdown.Item as={Link} to="/my-orders">My Orders</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/all-orders">All Orders</NavDropdown.Item>
+                            </NavDropdown>}
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/appointment"><span className="item-color">Make Appointment</span></Nav.Link>
                             <Nav.Link as={Link} to="/about"><span className="item-color">About US</span></Nav.Link>
                         </Nav>
                         <Nav>

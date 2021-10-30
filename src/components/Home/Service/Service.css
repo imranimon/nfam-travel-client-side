@@ -1,0 +1,12 @@
+.img-fixed-size {
+    max-height: 160px;
+    border-bottom: 1px solid #B39CD0;
+}
+
+.nfam-animation {
+    transition: transform 1s;
+}
+
+.nfam-animation:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,7 @@
+.nfam-animation {
+    transition: transform 1s;
+}
+
+.nfam-animation:hover {
+    transform: scale(1.05);
+}
