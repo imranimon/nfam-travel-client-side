@@ -7,11 +7,12 @@ import axios from 'axios';
 import { Col, Row } from 'react-bootstrap';
 
 const AddService = () => {
-    const { swalSuccess } = useSwal();
+    const { swalSuccess, startLoading, stopLoading } = useSwal();
     const history = useHistory();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onCreateNewService = (serviceData) => {
+        startLoading('Adding New Service')
         const imgData = new FormData();
         imgData.append("file", serviceData.img[0])
         imgData.append("upload_preset", "imranimon")
@@ -25,6 +26,8 @@ const AddService = () => {
                         swalSuccess('New Service Added')
                         history.push('/home')
                     })
+            }).finally(() => {
+                stopLoading()
             })
     }
     return (
