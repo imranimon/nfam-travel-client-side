@@ -6,13 +6,17 @@ import { Row, Table } from 'react-bootstrap';
 import useSwal from '../../../hooks/useSwal';
 
 const AllOrders = () => {
-    const { swalConfirmation, swalSuccess } = useSwal();
+    const { swalConfirmation, swalSuccess, startLoading, stopLoading } = useSwal();
+    const [dataLoading, setDataLoading] = useState(true)
     const [orders, setOrders] = useState([]);
     const [deleteCount, setDeleteCount] = useState(0);
     const [modifiedCount, setModifiedCount] = useState(0);
     useEffect(() => {
         axios.get(`https://blooming-stream-09480.herokuapp.com/orders`)
-            .then(response => { setOrders(response.data) })
+            .then(response => {
+                setOrders(response.data)
+                setDataLoading(false)
+            })
     }, [deleteCount, modifiedCount])
 
     const onCancelOrder = _id => {
@@ -46,6 +50,9 @@ const AllOrders = () => {
     }
     return (
         <div className="container mt-3 mb-3 shadow-lg p-2 bg-body rounded">
+            {
+                dataLoading ? startLoading('Orders Loading') : stopLoading()
+            }
             <h2 className="text-danger text-center"><span className="border-bottom border-2 border-danger">
                 List Of All Available Orders</span>
             </h2>

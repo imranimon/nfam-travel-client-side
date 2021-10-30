@@ -30,8 +30,11 @@ const AddService = () => {
     return (
         <div className="container mt-3 mb-3">
             <Row xs={1} md={2} className='shadow-lg p-2 bg-body rounded'>
-                <Col>
-
+                <Col className="img-col-bg">
+                    <div>
+                        <h3 className="text-center text-danger mt-5">ADD NEW SERVICE</h3>
+                        <img className='img-fluid rounded' src="https://i.ibb.co/sy6k1kK/v660-mon-04-travelbadge-min.jpg" alt="" />
+                    </div>
                 </Col>
                 <Col>
                     <form onSubmit={handleSubmit(onCreateNewService)}>
@@ -57,7 +60,7 @@ const AddService = () => {
                             <label htmlFor="rating" className="form-label">Initial Rating</label>
                             <input {...register("rating", { required: true, min: 0, max: 5 })}
                                 type="number" className="form-control" id="rating" />
-                            {errors.rating && <span className='text-danger'>Initial Rating is required and have to be in between 0 and 5</span>}
+                            {errors.rating && <span className='text-danger'>Initial Rating is required and must be between 0 and 5</span>}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="img" className="form-label">Image</label>

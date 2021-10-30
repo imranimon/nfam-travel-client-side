@@ -23,9 +23,38 @@ const useSwal = () => {
         })
     }
 
+    const swalReturnSuccess = (title) => {
+        return Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title,
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+    const startLoading = (title) => {
+        Swal.fire({
+            title,
+            backdrop: true,
+            allowOutsideClick: () => {
+                return false;
+            },
+            didOpen: () => {
+                Swal.showLoading();
+            },
+        });
+    }
+
+    const stopLoading = () => {
+        Swal.close();
+    }
+
     return {
         swalConfirmation,
-        swalSuccess
+        swalSuccess,
+        swalReturnSuccess,
+        startLoading,
+        stopLoading,
     }
 }
 
