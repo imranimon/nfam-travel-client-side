@@ -30,9 +30,9 @@ const MyOrders = () => {
     }
     return (
         <div className="container mt-3 mb-3 shadow-lg p-2 bg-body rounded">
-            <Row className="text-center text-danger mb-3">
-                <h2><span className="border-bottom border-2 border-danger">List Of Your Orders</span></h2>
-            </Row>
+            <h2 className="text-center text-danger"><span className="border-bottom border-2 border-danger">
+                List Of Your Orders</span>
+            </h2>
             <Table striped bordered hover>
                 <thead>
                     <tr>
