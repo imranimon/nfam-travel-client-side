@@ -48,8 +48,10 @@ const MyOrders = () => {
                             key={order._id}
                         >
                             <td>{order.place}</td>
-                            <td>{order.cost}</td>
-                            <td>{order.status}</td>
+                            <td>{order.cost} €</td>
+                            <td className={order.status === 'Accepted' ? 'text-success' : 'text-danger'}>
+                                {order.status}
+                            </td>
                             <td>
                                 <button onClick={() => { onCancelOrder(order._id) }} className='btn btn-sm btn-outline-danger'
                                     disabled={order.status === 'Accepted' ? true : false}>

@@ -36,7 +36,13 @@ const Header = () => {
                             <NavDropdown id='text-white' title='Manage Order'>
                                 <NavDropdown.Item as={Link} to="/my-orders">My Orders</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/all-orders">All Orders</NavDropdown.Item>
-                            </NavDropdown>}
+                            </NavDropdown>
+                        }
+                        {user.email &&
+                            <Nav>
+                                <Nav.Link as={Link} to="/add-service"><span className="item-color">Add Service</span></Nav.Link>
+                            </Nav>
+                        }
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/about"><span className="item-color">About US</span></Nav.Link>
                         </Nav>

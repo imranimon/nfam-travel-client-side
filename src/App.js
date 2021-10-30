@@ -12,6 +12,7 @@ import SingleService from './components/SingleService/SingleService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyOrders from './components/ManageOrders/MyOrders/MyOrders';
 import AllOrders from './components/ManageOrders/AllOrders/AllOrders';
+import AddService from './components/AddService/AddService';
 
 function App() {
   return (
@@ -32,8 +33,11 @@ function App() {
             <Route path='/signup'>
               <SignUp></SignUp>
             </Route>
-            <PrivateRoute path='/services/:_id'>
+            <PrivateRoute path='/place-order/:_id'>
               <SingleService></SingleService>
+            </PrivateRoute>
+            <PrivateRoute path='/add-service'>
+              <AddService></AddService>
             </PrivateRoute>
             <PrivateRoute path='/my-orders'>
               <MyOrders></MyOrders>

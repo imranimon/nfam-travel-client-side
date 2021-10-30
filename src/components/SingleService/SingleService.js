@@ -5,7 +5,6 @@ import Rating from 'react-rating';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
-import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 import useSwal from '../../hooks/useSwal';
 

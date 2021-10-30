@@ -26,7 +26,7 @@ const Service = (props) => {
                         <Card.Text as="h5">
                             Cost: from {price}€
                         </Card.Text>
-                        <Link to={`/services/${_id}`}>
+                        <Link to={`/place-order/${_id}`}>
                             <Button variant='outline-danger'>Book Offer</Button>
                         </Link>
 

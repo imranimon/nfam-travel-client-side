@@ -17,7 +17,7 @@ const Newsletter = () => {
                 <Col xs={12} md={6} className='d-flex justify-content-center align-items-center'>
                     <div>
                         <h3 className='text-danger'>Subscribe To Get Latest Offers</h3>
-                        <p>Our e-mail newsletter informs you regularly about<br />the best offer we have on that moment.</p>
+                        <p>Our e-mail newsletter informs you regularly about<br />the best offer we have.</p>
                         <form onSubmit={handleSubmit(onSubscribe)}>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email address</label>

@@ -69,8 +69,10 @@ const AllOrders = () => {
                                 <td>{order.name}</td>
                                 <td>{order.email}</td>
                                 <td>{order.place}</td>
-                                <td>{order.cost}</td>
-                                <td>{order.status}</td>
+                                <td>{order.cost} €</td>
+                                <td className={order.status === 'Accepted' ? 'text-success' : 'text-danger'}>
+                                    {order.status}
+                                </td>
                                 <td>
                                     <button onClick={() => { onCancelOrder(order._id) }} className='btn btn-sm btn-outline-danger m-2'>
                                         Delete
